@@ -6,12 +6,16 @@ class User < ApplicationRecord
 
   validates :nickname, :email, :birth_date, presence: true
 
+  PASSWORD_FORMAT = (/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i)
+  NAME_FORMAT = (/\A[ぁ-んァ-ン一-龥]+\z/)
+  NAME_KANA_FORMAT = (/\A[ァ-ヶー－]+\z/)
+  
   with_options presence: true do
-    validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i }
-    validates :first_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
-    validates :last_name, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/ }
-    validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
-    validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/ }
+    validates :password, format: { with: PASSWORD_FORMAT }
+    validates :first_name, format: { with: NAME_FORMAT }
+    validates :last_name, format: { with: NAME_FORMAT }
+    validates :first_name_kana, format: { with: NAME_KANA_FORMAT }
+    validates :last_name_kana, format: { with: NAME_KANA_FORMAT }
   end
 
   has_many :items

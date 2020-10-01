@@ -6,8 +6,11 @@ class User < ApplicationRecord
 
   validates :nickname, :email, :birth_date, presence: true
 
+  # ↓メールアドレス正規表現
   PASSWORD_FORMAT = (/\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i)
+  # ↓全角（漢字・ひらがな・カタカナ）正規表現
   NAME_FORMAT = (/\A[ぁ-んァ-ン一-龥]+\z/)
+  # ↓全角（カタカナ）正規表現
   NAME_KANA_FORMAT = (/\A[ァ-ヶー－]+\z/)
   
   with_options presence: true do

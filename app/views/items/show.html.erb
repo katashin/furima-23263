@@ -40,27 +40,27 @@
       <tbody>
         <tr>
           <th class="detail-item">出品者</th>
-          <td class="detail-value"><%= @user.nickname %></td>
+          <td class="detail-value"><%= @item.user.nickname %></td>
         </tr>
         <tr>
           <th class="detail-item">カテゴリー</th>
-          <td class="detail-value"><%= @category.name %></td>
+          <td class="detail-value"><%= Category.find(@item.category_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">商品の状態</th>
-          <td class="detail-value"><%= @sales_status.name %></td>
+          <td class="detail-value"><%= SalesStatus.find(@item.sales_status_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">配送料の負担</th>
-          <td class="detail-value"><%= @shapping_fee_status.name %></td>
+          <td class="detail-value"><%= ShappingFeeStatus.find(@item.shapping_fee_status_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送元の地域</th>
-          <td class="detail-value"><%= @prefecture.name %></td>
+          <td class="detail-value"><%= Prefecture.find(@item.prefecture_id).name %></td>
         </tr>
         <tr>
           <th class="detail-item">発送日の目安</th>
-          <td class="detail-value"><%= @scheduled_delivery.name %></td>
+          <td class="detail-value"><%= ScheduledDelivery.find(@item.scheduled_delivery_id).name %></td>
         </tr>
       </tbody>
     </table>
@@ -99,7 +99,7 @@
       後ろの商品 ＞
     </a>
   </div>
-  <a href="#" class='another-item'><%= @category.name %>をもっと見る</a>
+  <a href="#" class='another-item'><%= Category.find(@item.category_id).name %>をもっと見る</a>
 </div>
 
 <%= render "shared/footer" %>

@@ -15,7 +15,7 @@
 
 ## Association
 - has_many :items
-- has_many :item_oders
+- has_many :orders
 
 ## items テーブル
 
@@ -33,7 +33,7 @@
 
 ## Association
 - belongs_to :user
-- has_one :item_oder
+- has_one :order
 
 ## addresses テーブル
 
@@ -48,9 +48,9 @@
 | item_oder_id    | integer      | foreing_key: true |
 
 ## Association
-- belongs_to :item_oder
+- belongs_to :order
 
-## item_oders テーブル
+## orders テーブル
 
 | Column     | Type         | Options           |
 | ---------- | ------------ | ----------------- |

@@ -5,6 +5,6 @@ FactoryBot.define do
     city            { '国分寺市' }
     addresses       { '国分寺町1-1-1' }
     phone_number    { '09011112222' }
-    prefecture_id   { '1' }
+    prefecture_id   { '2' }
   end
 end

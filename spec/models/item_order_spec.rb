@@ -10,6 +10,10 @@ RSpec.describe ItemOrder, type: :model do
       it '全ての情報が正しく入力されていれば登録' do
         expect(@item_order).to be_valid
       end
+      it 'buildingが空白でも登録ができる' do
+        @item_order.building = ""
+        expect(@item_order).to be_valid
+      end
     end
 
     context '登録がうまくいかないとき' do

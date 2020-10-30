@@ -6,5 +6,6 @@ FactoryBot.define do
     addresses       { '国分寺町1-1-1' }
     phone_number    { '09011112222' }
     prefecture_id   { '2' }
+    building        {'東京ビル'}
   end
 end

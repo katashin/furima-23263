@@ -1,3 +1,4 @@
+if (document.URL.match(/new/)){
 function post() {
   const itemPrice = document.getElementById("item-price");
   itemPrice.addEventListener("keyup", () => {
@@ -13,3 +14,4 @@ function post() {
 }
 
 setInterval(post,1000);
+};

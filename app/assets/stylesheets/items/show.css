@@ -204,3 +204,9 @@
   font-weight: bold;
   font-size: 23px;
 }
+
+.comment-fied{
+  overflow: scroll;
+  text-align: left;
+  height: 200px;
+}

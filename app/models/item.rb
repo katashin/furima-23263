@@ -17,6 +17,14 @@ class Item < ApplicationRecord
     validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
 
+  def self.search(search)
+    if search != ""
+       Item.where("name LIKE(?)", "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
   belongs_to :user
   has_one :order
   has_one_attached :image
